@@ -26,18 +26,42 @@ const Navbar = () => {
       
       <div className="nav-right-section">
         <div className="social-icons">
-          <a href="https://www.instagram.com/ramd_rodrigo/" target="_blank" rel="noopener noreferrer">
-            <img src="public\icons\instagram.svg" alt={currentText.altInstagram} />
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-duenas-305354200/" target="_blank" rel="noopener noreferrer">
-            <img src="public\icons\linkedin.svg" alt={currentText.altlinkedin} />
-          </a>
-          <a href="http://www.behance.net/rodrigoramd" target="_blank" rel="noopener noreferrer">
-            <img src="public\icons\behance.svg" alt={currentText.altbehance} />
-          </a>
-          <a href="https://wa.me/5542999999999" target="_blank" rel="noopener noreferrer">
-            <img src="public\icons\whatsapp.svg" alt={currentText.altwhatsapp} />
-          </a>
+          <a 
+                  href="https://www.instagram.com/ramd_rodrigo/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="icon-button"
+                  title="Visit Instagram"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a 
+                  href="https://behance.net/rodrigoramd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icon-button"
+                  title="Visit Behance"
+                >
+                  <i className="fab fa-behance"></i>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/rodrigo-duenas-305354200/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icon-button"
+                  title="Visit LinkedIn"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a 
+                  href="https://wa.me/5542999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icon-button"
+                  title="Contact via WhatsApp"
+                >
+                  <i className="fab fa-whatsapp"></i>
+                </a>
           
         </div>
         <LanguageSelector />
