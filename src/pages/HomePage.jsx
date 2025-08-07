@@ -7,7 +7,7 @@ import { translations } from '../translations';
 import ImageCarousel from '../components/ImageCarousel';
 import { circularGalleryData1, circularGalleryData2 } from '../data/galleryData'; 
 import TiltedCard from '../components/TiltedCard';
-import { cosplayGridData } from '../data/cosplayData';
+import { cosplayData } from '../data/galleryCosplayData';
 
 import cardImg1 from '../assets/card-image-1.jpg';
 import cardImg2 from '../assets/card-image-2.jpg';
@@ -69,7 +69,7 @@ const HomePage = () => {
           return (
             <section key={section.id} className="fullscreen-section cosplay-section" style={{ backgroundColor: section.bgColor }}>
               <div className="cosplay-grid-container">
-                {cosplayGridData.map((cosplay, index) => (
+                {cosplayData.map((cosplay, index) => (
                   <div key={index} className={`grid-item grid-item-${index + 1}`}>
                     <TiltedCard
                       imageSrc={cosplay.image}
