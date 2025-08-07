@@ -1,9 +1,7 @@
-// src/components/LanguageSelector.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import './LanguageSelector.css';
 
-// O caminho para o ícone que está na pasta 'public'
 const globeIconPath = '/icons/globe.svg';
 
 const LanguageSelector = () => {
@@ -11,7 +9,6 @@ const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Função para fechar o menu se clicar fora dele
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

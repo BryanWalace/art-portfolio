@@ -15,6 +15,23 @@
   --accent-hover: #cdddf9;
   --divider: #e5e5e5;
   --shadow: rgba(29, 68, 143, 0.15);
+
+  --font-size-base: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  --font-size-lg: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  --font-size-xl: clamp(2rem, 3vw + 1.5rem, 3.5rem);
+  
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(1rem, 2vw, 1.5rem);
+  --space-md: clamp(1.5rem, 3vw, 2.5rem);
+  --space-lg: clamp(2rem, 4vw, 4rem);
+  --space-xl: clamp(3rem, 6vw, 6rem);
+  
+  --container-narrow: min(100% - 2rem, 768px);
+  --container-wide: min(100% - 2rem, 1200px);
+  
+  --navbar-height: clamp(60px, 10vh, 100px);
+  --card-width: clamp(280px, 90vw, 500px);
+  --carousel-item-width: clamp(250px, 80vw, 400px);
 }
 
 * {

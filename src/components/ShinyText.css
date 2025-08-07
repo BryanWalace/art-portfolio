@@ -1,41 +1,30 @@
-/* src/components/ShinyText.css (CORRIGIDO) */
-
 .shiny-text {
-  /* A cor de fallback, caso o efeito não funcione */
   color: var(--primary);
 
-  /* O gradiente que será a "tinta" do texto */
   background: linear-gradient(
     120deg,
-    var(--primary) 35%,  /* Cor base primária */
-    rgba(255, 255, 255, 1) 50%, /* O brilho branco no centro */
-    var(--primary) 65%   /* Cor base primária novamente */
+    var(--primary) 35%,  
+    rgba(255, 255, 255, 1) 50%, 
+    var(--primary) 65%  
   );
 
-  /* O truque é fazer o background ser bem maior que o texto */
   background-size: 200% 100%;
 
-  /* A mágica acontece aqui: o background é recortado no formato do texto */
   -webkit-background-clip: text;
   background-clip: text;
 
-  /* Essencial para que o texto em si fique transparente e revele o background */
   -webkit-text-fill-color: transparent;
 
   display: inline-block;
 
-  /* Aplica a animação 'shine' que definimos abaixo */
-  animation: shine 4s linear infinite; /* Diminuí um pouco o tempo para o efeito ser mais notável */
+  animation: shine 4s linear infinite;
 }
 
-/* A animação CORRIGIDA para ser um loop perfeito */
 @keyframes shine {
-  /* No início, o gradiente está todo para a direita */
-  from { /* (Equivalente a 0%) */
+  from {
     background-position: 100% 0;
   }
-  /* No final da animação, ele se moveu todo para a esquerda */
-  to { /* (Equivalente a 100%) */
+  to {
     background-position: -100% 0;
   }
 }

@@ -1,28 +1,23 @@
-// src/components/ImageCarousel.jsx
 import React from 'react';
 
-// Importa os componentes e módulos do Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow, A11y } from 'swiper/modules';
 
-// Importa os estilos do Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
-// Importa nosso CSS customizado para o carrossel
 import './ImageCarousel.css';
 
 const ImageCarousel = ({ items = [] }) => {
   if (!items || items.length === 0) {
-    return null; // Não renderiza nada se não houver itens
+    return null; 
   }
 
   return (
     <div className="carousel-container">
       <Swiper
-        // Instala os módulos que vamos usar
         modules={[Navigation, Pagination, EffectCoverflow, A11y]}
         effect={'coverflow'}
         grabCursor={true}

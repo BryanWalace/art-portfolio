@@ -1,0 +1,234 @@
+.cosplay-page {
+  padding: 100px 20px 20px 20px; /* Added top padding for navbar */
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--background-color);
+}
+
+.grid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-col {
+  float: left;
+  width: 49%;
+  margin-right: 2%;
+  background: transparent;
+}
+
+.grid-col--4 {
+  margin-right: 0;
+}
+
+.grid-col--2,
+.grid-col--3 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .grid-col {
+    width: 32%;
+  }
+  .grid-col--2 {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-col {
+    width: 23.5%;
+  }
+  .grid-col--2,
+  .grid-col--3 {
+    display: block;
+  }
+}
+
+.grid-item {
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.grid-item img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.image-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.image-view-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.image-view-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 1010;
+  color: white;
+}
+
+.image-view-actions-left {
+  display: flex;
+  gap: 1rem;
+}
+
+.character-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.close-button {
+  font-size: 2rem;
+}
+
+.image-view-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.image-view-main img {
+  max-height: calc(90vh - 120px);
+  max-width: min(calc(100% - 120px), 1400px); /* Account for navigation buttons and max width */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1010;
+  opacity: 0.7;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .image-view-main {
+    padding: 10px;
+    margin-top: 50px;
+  }
+
+  .image-view-main img {
+    max-height: calc(90vh - 100px);
+    max-width: calc(100% - 40px);
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .prev-button {
+    left: 10px;
+  }
+
+  .next-button {
+    right: 10px;
+  }
+
+  .character-name {
+    font-size: 1.2rem;
+  }
+
+  .icon-button {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+
+  .close-button {
+    font-size: 1.5rem;
+  }
+}

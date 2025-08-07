@@ -1,12 +1,16 @@
-// src/components/Navbar.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import '@fontsource/orbitron/700.css';
 import ShinyText from './ShinyText';
-import LanguageSelector from './LanguageSelector'; // <-- IMPORTE AQUI
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../context/LanguageContext'; // MUDANÇA
+import { translations } from '../translations'; // MUDANÇA
 
 const Navbar = () => {
+  const { language } = useLanguage();
+  const currentText = translations[language];
+
   return (
     <nav className="main-nav">
       <NavLink to="/" className="logo">
@@ -14,23 +18,29 @@ const Navbar = () => {
       </NavLink>
       
       <div className="nav-links">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/arts">Arts</NavLink>
-        <NavLink to="/cosplay">Cosplay</NavLink>
-        <NavLink to="/sobre">Sobre</NavLink>
+        <NavLink to="/">{currentText.navHome}</NavLink>
+        <NavLink to="/arts">{currentText.navArts}</NavLink>
+        <NavLink to="/cosplay">{currentText.navCosplay}</NavLink>
+        <NavLink to="/sobre">{currentText.navAbout}</NavLink>
       </div>
       
-      {/* Agrupamos os ícones e o seletor */}
       <div className="nav-right-section">
         <div className="social-icons">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/instagram.svg" alt="Instagram" />
+          <a href="https://www.instagram.com/ramd_rodrigo/" target="_blank" rel="noopener noreferrer">
+            <img src="public\icons\instagram.svg" alt={currentText.altInstagram} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/twitter.svg" alt="Twitter" />
+          <a href="https://www.linkedin.com/in/rodrigo-duenas-305354200/" target="_blank" rel="noopener noreferrer">
+            <img src="public\icons\linkedin.svg" alt={currentText.altlinkedin} />
           </a>
+          <a href="http://www.behance.net/rodrigoramd" target="_blank" rel="noopener noreferrer">
+            <img src="public\icons\behance.svg" alt={currentText.altbehance} />
+          </a>
+          <a href="https://wa.me/5542999999999" target="_blank" rel="noopener noreferrer">
+            <img src="public\icons\whatsapp.svg" alt={currentText.altwhatsapp} />
+          </a>
+          
         </div>
-        <LanguageSelector /> {/* <-- ADICIONE AQUI */}
+        <LanguageSelector />
       </div>
     </nav>
   );
