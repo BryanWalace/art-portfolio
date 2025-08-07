@@ -4,8 +4,9 @@ import './Navbar.css';
 import '@fontsource/orbitron/700.css';
 import ShinyText from './ShinyText';
 import LanguageSelector from './LanguageSelector';
-import { useLanguage } from '../context/LanguageContext'; // MUDANÇA
-import { translations } from '../translations'; // MUDANÇA
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
+
 
 const Navbar = () => {
   const { language } = useLanguage();
